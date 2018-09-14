@@ -21,12 +21,12 @@ public class OzonTests {
         File file = new File("D:\\\\Android\\\\FF_webdriver\\\\chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
-        wait = new WebDriverWait(webDriver, 50, 600);
         website = new AllPages(webDriver);
         webDriver.get("https://www.ozon.ru/");
         webDriver.manage().window().maximize();
         website.mainPage().clickToBookCategory();
-        website.mainPage().enterBookName("Automation testing");
+        wait = new WebDriverWait(webDriver, 50, 600);
+        website.mainPage().enterBookName("Automation test");
         website.mainPage().clickStartSearch();
 
     }
@@ -39,22 +39,23 @@ public class OzonTests {
             wait = new WebDriverWait(webDriver, 50, 600);
         }
         System.out.println(webDriver.getCurrentUrl());
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("Automation+testing"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("Automation+test"));
     }
 
     @Test
     public void testOpenLink() {
-       website.searchResultPage().waitForSearchResult();
+        website.searchResultPage().waitForSearchResult();
         website.searchResultPage().firstItemClick();
         webDriver.navigate().back();
     }
 
     @Test
-    public void getTitleOfBook () {
+    public void getTitleOfBook() {
         website.searchResultPage().waitForSearchResult();
         website.searchResultPage().firstItemClick();
         website.bookInfoPage().waitForItemInfo();
-        website.bookInfoPage().checkitemTitles("Effective GUI Testing Automation");
+        website.bookInfoPage().checkitemTitles("Building a GUI Test Automation");
+        website.bookInfoPage().checkItemStatus();
 
     }
 
@@ -87,13 +88,13 @@ public class OzonTests {
 //        website.bookInfoPage().checkitemTitles("Test Automation");
 //    }
 
-    @After
-
-    public void tearDown() {
-        if (webDriver != null) {
-            webDriver.quit();
-        }
-
-    }
+//    @After
+//
+//    public void tearDown() {
+//        if (webDriver != null) {
+//            webDriver.quit();
+//        }
+//
+//    }
 
 }
