@@ -35,7 +35,7 @@ public class BookInfoPage {
         wait.until(ExpectedConditions.visibilityOf(itemTitle));
     }
 
-    public void checkitemTitles(String title) {
+    public void checkTitleOfItem(String title) {
 
         System.out.println(itemTitle.getText());
         Assert.assertTrue(itemTitle.getText().contains(title));

@@ -1,4 +1,3 @@
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -54,7 +53,7 @@ public class OzonTests {
         website.searchResultPage().waitForSearchResult();
         website.searchResultPage().firstItemClick();
         website.bookInfoPage().waitForItemInfo();
-        website.bookInfoPage().checkitemTitles("Building a GUI Test Automation");
+        website.bookInfoPage().checkTitleOfItem("Building a GUI Test Automation");
         website.bookInfoPage().checkItemStatus();
 
     }
@@ -85,7 +84,7 @@ public class OzonTests {
 //        website.searchResultPage().openItemFromSearch("Test Automation");
 //        System.out.println(webDriver.getTitle());
 //        website.bookInfoPage().waitForItemInfo();
-//        website.bookInfoPage().checkitemTitles("Test Automation");
+//        website.bookInfoPage().checkTitleOfItem("Test Automation");
 //    }
 
 //    @After
