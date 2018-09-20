@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -87,13 +88,13 @@ public class OzonTests {
 //        website.bookInfoPage().checkTitleOfItem("Test Automation");
 //    }
 
-//    @After
-//
-//    public void tearDown() {
-//        if (webDriver != null) {
-//            webDriver.quit();
-//        }
-//
-//    }
+    @After
+
+    public void tearDown() {
+        if (webDriver != null) {
+            webDriver.quit();
+        }
+
+    }
 
 }
