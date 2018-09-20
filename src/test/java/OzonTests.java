@@ -25,7 +25,7 @@ public class OzonTests {
         webDriver.manage().window().maximize();
         website.mainPage().clickToBookCategory();
         wait = new WebDriverWait(webDriver, 50, 600);
-        website.mainPage().enterBookName("Automation test");
+        website.mainPage().enterBookName("Java");
         website.mainPage().clickStartSearch();
 
     }
@@ -38,7 +38,7 @@ public class OzonTests {
             wait = new WebDriverWait(webDriver, 50, 600);
         }
         System.out.println(webDriver.getCurrentUrl());
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("Automation+test"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("Java"));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class OzonTests {
         website.searchResultPage().waitForSearchResult();
         website.searchResultPage().firstItemClick();
         website.bookInfoPage().waitForItemInfo();
-        website.bookInfoPage().checkTitleOfItem("Building a GUI Test Automation");
-        website.bookInfoPage().checkItemStatus();
+        website.bookInfoPage().checkTitleOfItem("Изучаем Java");
+     //   website.bookInfoPage().checkItemStatus();
 
     }
 
